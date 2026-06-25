@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на День Рождения Айсултана</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Montserrat:wght@400;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #03030a;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Мягкая неоновая подсветка заднего фона */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: rgba(0, 242, 254, 0.12);
+            border-radius: 50%;
+            filter: blur(150px);
+            top: 15%;
+            left: 15%;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: rgba(253, 0, 242, 0.12);
+            border-radius: 50%;
+            filter: blur(150px);
+            bottom: 15%;
+            right: 15%;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            max-width: 550px;
+            width: 100%;
+        }
+
+        /* Стильная карточка */
+        .invitation-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 2px solid #00f2fe;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2), inset 0 0 15px rgba(0, 242, 254, 0.1);
+            border-radius: 20px;
+            padding: 40px 25px;
+            margin-bottom: 35px;
+            backdrop-filter: blur(8px);
+        }
+
+        .invitation-card h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #fd00f2;
+            text-shadow: 0 0 8px #fd00f2;
+            margin-bottom: 15px;
+        }
+
+        .name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #fff;
+            text-shadow: 
+                0 0 10px #fff,
+                0 0 20px #00f2fe,
+                0 0 40px #00f2fe;
+            margin-bottom: 30px;
+        }
+
+        /* Блок инфы: Время и Место */
+        .details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .detail-item {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .detail-item span {
+            color: #fd00f2;
+            text-shadow: 0 0 8px rgba(253, 0, 242, 0.6);
+            font-weight: 700;
+        }
+
+        /* Таймер обратного отсчета */
+        h1 {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            color: #a0a0c0;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            min-width: 95px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            color: #00f2fe;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+        }
+
+        .box:nth-child(even) .number {
+            color: #fd00f2;
+            text-shadow: 0 0 10px rgba(253, 0, 242, 0.5);
+        }
+
+        .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #707090;
+            margin-top: 5px;
+            display: block;
+        }
+
+        #celebration {
+            display: none;
+            font-size: 3rem;
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            text-shadow: 0 0 15px #00ff66, 0 0 30px #00ff66;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .name { font-size: 2.4rem; }
+            .invitation-card { padding: 30px 15px; }
+            .countdown { gap: 10px; }
+            .box { min-width: 80px; padding: 12px 5px; }
+            .number { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Карточка приглашения -->
+        <div class="invitation-card">
+            <h2>Приглашение на День рождения</h2>
+            <div class="name">Айсултана</div>
+            
+            <div class="details">
+                <div class="detail-item">📅 Дата: <span>27 июня</span></div>
+                <div class="detail-item">🕒 Время: <span>Вечером</span></div>
+                <div class="detail-item">📍 Место: <span>Байжанова 1</span></div>
+            </div>
+        </div>
+
+        <!-- Таймер -->
+        <h1 id="title">До дня рождение осталось:</h1>
+        
+        <div class="countdown" id="countdown-timer">
+            <div class="box">
+                <span class="number" id="days">00</span>
+                <span class="label">Дней</span>
+            </div>
+            <div class="box">
+                <span class="number" id="hours">00</span>
+                <span class="label">Часов</span>
+            </div>
+            <div class="box">
+                <span class="number" id="minutes">00</span>
+                <span class="label">Минут</span>
+            </div>
+            <div class="box">
+                <span class="number" id="seconds">00</span>
+                <span class="label">Секунд</span>
+            </div>
+        </div>
+
+        <div id="celebration">С ДНЕМ РОЖДЕНИЯ! 🎉</div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const currentYear = new Date().getFullYear();
+            let targetDate = new Date(`June 27, ${currentYear} 18:00:00`).getTime(); // Поставил на 18:00 вечера
+            const now = new Date().getTime();
+            let difference = targetDate - now;
+
+            if (difference < 0) {
+                targetDate = new Date(`June 27, ${currentYear + 1} 18:00:00`).getTime();
+                difference = targetDate - now;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+
+            const today = new Date();
+            if (today.getDate() === 27 && today.getMonth() === 5) {
+                document.getElementById('countdown-timer').style.display = 'none';
+                document.getElementById('title').style.display = 'none';
+                document.getElementById('celebration').style.display = 'block';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
